@@ -1,26 +1,49 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { GridComponent, Grid } from './components'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export class App extends React.Component {
+
+  state = {
+    grid: []
+  }
+
+  componentDidMount() {
+    const gridClass = new Grid()
+    this.setState({ grid: gridClass.grid, gridClass, carPos: gridClass.currCarPos })
+    document.onkeydown = (e) => {
+      e = e || window.event;
+      if (e.keyCode == '38') {
+        console.log('up')
+      }
+      else if (e.keyCode == '40') {
+        const newGrid = gridClass.drawHouse(1,3)
+        console.log(newGrid)
+        this.setState({ grid: newGrid })
+      }
+      else if (e.keyCode == '37') {
+        const newGrid = gridClass.drawCar(gridClass.currCarPos-1)
+        this.setState({ grid: newGrid })
+      }
+      else if (e.keyCode == '39') {
+        const newGrid = gridClass.drawCar(gridClass.currCarPos+1)
+        this.setState({ grid: newGrid })
+      }
+    }
+  }
+
+  render() {
+    const { grid } = this.state
+    return (
+      <div className="App">
+        <GridComponent grid={grid}/>
+      </div>
+    );
+  }
+  
+  
 }
 
 export default App;
