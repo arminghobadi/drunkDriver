@@ -9,7 +9,7 @@ export class HouseComponent extends React.Component {
 
   render() {
     const { type } = this.props
-    const wh = 2
+    const wh = 10
     const backgroundColors = {
       car: 'black',
       house: 'blue'
