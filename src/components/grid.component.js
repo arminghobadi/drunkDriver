@@ -20,7 +20,7 @@ export class GridComponent extends React.Component {
             <div style={{ display: 'flex', flexDirection: 'row' }} >
               { 
                 row.map(pixel => 
-                  pixelMap[pixel] ? <HouseComponent type={pixelMap[pixel]} /> : <HouseComponent />
+                  <HouseComponent type={pixel}/>
                 ) 
               }
             </div>

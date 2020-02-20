@@ -89,7 +89,7 @@ export class App extends React.Component {
       <div className="App">
         <GridComponent grid={grid}/>
         {/* <button onClick={() => this.setState({ grid: this.state.gridClass.next() }) }>next</button> */}
-        score: {gridClass ? this.calculateScore({ numCycles: gridClass.numCycles}) : 0}
+        {/* score: {gridClass ? this.calculateScore({ numCycles: gridClass.numCycles}) : 0}
         <br/>
         high score: {highScore}
         <br/>
@@ -155,7 +155,7 @@ export class App extends React.Component {
         </div>
 
         <br />
-        difficulty: <input type={'number'} onChange={(e) => this.setState({ difficulty: e.target.value })} value={difficulty} />
+        difficulty: <input type={'number'} onChange={(e) => this.setState({ difficulty: e.target.value })} value={difficulty} /> */}
       </div>
     );
   }

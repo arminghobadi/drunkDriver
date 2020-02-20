@@ -9,13 +9,22 @@ export class HouseComponent extends React.Component {
 
   render() {
     const { type } = this.props
-    const wh = 10
+    const wh = 12
     const backgroundColors = {
       car: 'black',
-      house: 'blue'
+      house: 'blue',
+      null: 'white',
+      undefined: 'white'
     }
     return (
-      <div style={{ width: `${wh}px`, height: `${wh}px`, backgroundColor: backgroundColors[type] ? backgroundColors[type] : 'white', border: '1px black solid' }}>
+      <div 
+        style={{ 
+          width: `${wh}px`, 
+          height: `${wh}px`, 
+          backgroundColor: type.backgroundColor, 
+          border: '1px black solid' 
+        }}
+      >
 
       </div>
     )
