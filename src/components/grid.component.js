@@ -14,7 +14,7 @@ export class GridComponent extends React.Component {
       h: 'house'
     }
     return (
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         {
           grid.map(row => 
             <div style={{ display: 'flex', flexDirection: 'row' }} >
