@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { GridComponent, Grid } from './components'
 
@@ -24,9 +23,9 @@ export class App extends React.Component {
         
       }
       else if (e.keyCode == '40') {
-        const newGrid = gridClass.drawHouse(1,-2)
-        // console.log(newGrid)
-        this.setState({ grid: newGrid })
+        // const newGrid = gridClass.drawHouse(1,-2)
+        // // console.log(newGrid)
+        // this.setState({ grid: newGrid })
       }
       else if (e.keyCode == '37') {
         const newGrid = gridClass.drawCar(gridClass.currCarPos-1)
@@ -60,6 +59,8 @@ export class App extends React.Component {
         }, 100)
         // console.log('up')
         this.setState({ interval })}} disabled={this.state.interval}>start</button>
+        <br/>
+        (navigation is with arrow keys) (you can only go left and right)
       </div>
     );
   }
